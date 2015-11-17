@@ -41,3 +41,6 @@ QQDemo/Debug/mt.dep
 *d.lib
 *d.exp
 *.aps
+*.ilk
+*.exe
+*.cd

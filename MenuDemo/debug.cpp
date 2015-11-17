@@ -22,7 +22,7 @@
 
 #if defined(DBG_THREADSAFE)
 
-class OS_CLockable 
+class OS_CLockable
 {
 public:
 	// ## Constructor / Destructor
@@ -178,6 +178,8 @@ static	bool			s_bLogPathInit = false;
 #if defined(DBG_THREADSAFE)
 static	OS_CLockable	s_mtxEntry;
 #endif
+#include<ctime>
+#include "atltime.h"
 
 BOOL DbgPrint(__in LPCTSTR lpszFormatString, ...)
 {
@@ -195,6 +197,7 @@ BOOL DbgPrint(__in LPCTSTR lpszFormatString, ...)
 		{
 			SYSTEMTIME stime = {0};			
 			GetLocalTime(&stime);
+
 #if defined(UNDER_CE)
 			_stprintf(s_szLogFile, _T("%s\\log_%04d%02d%02d_%d.log"), g_bLogSavePath, stime.wYear, stime.wMonth, stime.wDay, GetTickCount());
 #else

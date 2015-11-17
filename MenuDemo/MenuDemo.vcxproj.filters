@@ -11,48 +11,51 @@
     <Filter Include="Resource Files">
       <UniqueIdentifier>{14836bad-d2f5-4d2e-b8db-a7e95a37db07}</UniqueIdentifier>
     </Filter>
+    <Filter Include="code">
+      <UniqueIdentifier>{a08ec4f8-ce77-4155-8d93-07c5836fc993}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="debug.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main_frame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="StdAfx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="debug.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
+    <ClCompile Include="main_frame.cpp">
+      <Filter>code</Filter>
+    </ClCompile>
     <ClCompile Include="UICrack.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>code</Filter>
     </ClCompile>
     <ClCompile Include="UIMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Header Files</Filter>
+      <Filter>code</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="debug.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main_frame.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="observer_impl_base.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="StdAfx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UICrack.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UIMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UICrack.h">
+      <Filter>code</Filter>
+    </ClInclude>
+    <ClInclude Include="UIMenu.h">
+      <Filter>code</Filter>
+    </ClInclude>
+    <ClInclude Include="observer_impl_base.hpp">
+      <Filter>code</Filter>
+    </ClInclude>
+    <ClInclude Include="main_frame.hpp">
+      <Filter>code</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -74,5 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="xml1.bin" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
