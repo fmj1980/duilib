@@ -171,7 +171,7 @@ BOOL CMenuWnd::Receive(ContextMenuParam param)
 
 void CMenuWnd::Init(CMenuElementUI* pOwner, STRINGorID xml, LPCTSTR pSkinType, POINT point)
 {
-	m_BasedPoint = point;
+		m_BasedPoint = point;
     m_pOwner = pOwner;
     m_pLayout = NULL;
 
