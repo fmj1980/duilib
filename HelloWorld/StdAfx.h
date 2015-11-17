@@ -5,6 +5,16 @@
 #include <vector>
 #include <sstream>
 
+#include <exception>
+#include <stack>
+#include <mutex>
+#include <memory>
+
+#include <chrono>
+#include <iostream>
+#include <time.h>
+#include <windows.h>
+
 #include "..\DuiLib\UIlib.h"
 
 using namespace DuiLib;
