@@ -10,4 +10,7 @@ protected:
 private:
 	weak_ptr<int> _weakPtr;
 	void TestTime();
+	void TestString();
+	void TestResource();
+
 };

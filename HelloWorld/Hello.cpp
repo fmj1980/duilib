@@ -28,7 +28,9 @@ void CHelloWorld::SayHello()
 		int result = *intPtr;
 	}
 	this->TestTime();
+	TestString();
 }
+
 
 void CHelloWorld::TestTime()
 {
@@ -74,5 +76,84 @@ void CHelloWorld::TestTime()
 	end = time(NULL);
 	char pauseTime[128];
 	sprintf(pauseTime, "The pause used %f seconds.\n", difftime(end, start));//<- 
+}
+
+LPCTSTR format(LPCTSTR pstrFormat, ...)
+{
+	LPTSTR szSprintf = NULL;
+	va_list argList;
+	int nLen;
+	va_start(argList, pstrFormat);
+	nLen = ::_vsntprintf(NULL, 0, pstrFormat, argList);
+	szSprintf = (TCHAR*)malloc((nLen + 1) * sizeof(TCHAR));
+	ZeroMemory(szSprintf, (nLen + 1) * sizeof(TCHAR));
+	int iRet = ::_vsntprintf(szSprintf, nLen + 1, pstrFormat, argList);
+	va_end(argList);
+	return szSprintf;
+}
+
+void CHelloWorld::TestString()
+{
+	char buffer[50];
+	int index = 100;
+	//int 转字符串
+	sprintf(buffer, "%d", index); 
+	OutputDebugStringA(buffer);
+
+	//单字节字符串转int
+	index = atoi(buffer);
+
+	size_t len = strlen(buffer) + 1;
+	wchar_t *wStr = (wchar_t*)malloc(len*sizeof(wchar_t));
+	//单字节转宽直接
+	mbstowcs_s(0, wStr, len, buffer, _TRUNCATE); 
+	OutputDebugStringW(wStr);
+
+	wchar_t wbuffer[50];
+	wsprintfW(wbuffer, L"%d", index);
+	//宽字节字符串转int
+	index = _wtoi(wbuffer);
+	OutputDebugStringW(wbuffer);
+	len = wcslen(wbuffer) + 1;
+	char *cStr = (char*)malloc(len*sizeof(char));
+	//宽字节转单字节
+	wcstombs_s(0, cStr, len, wbuffer, _TRUNCATE);
+	OutputDebugStringA(cStr);
+
+	wchar_t str[] = _T("Hello World");
+	wchar_t* upperStr = _tcsupr(str);
+	wchar_t* lowerStr = _tcslwr(str);
+	ASSERT(_tcsicmp(lowerStr, _T("hello world")) == 0);
+
+	//Left 3
+	wchar_t leftChar[50];
+	_tcsncpy(leftChar, str, 5);
+	leftChar[5] = *(_T("\0"));
+
+	//Mid 3 - 2
+	wchar_t midChar[50];
+	ZeroMemory(midChar, (50 + 1) * sizeof(TCHAR));
+	_tcsncpy(midChar, str + 3 -1, 2);
+	midChar[2] = *(_T("\0"));
+
+	//find ll
+	LPCTSTR finPtr = _tcsstr(str, _T("ll"));
+	if (finPtr != NULL){
+		DWORD findIndex = finPtr - str;
+	}
+
+	//format
+	LPCTSTR formatResut = format(_T("hello %d"), 123);
+
+	//HASH KEY?
+	UINT hash = 0;
+	SIZE_T length = _tcslen(str);
+	wchar_t cr = str[length - 1];
+	while (length-- > 0) hash = (hash << 5) + hash + str[length];
+}
+
+void CHelloWorld::TestResource()
+{
+
 }
 
