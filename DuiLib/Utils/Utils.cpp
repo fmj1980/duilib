@@ -740,7 +740,9 @@ namespace DuiLib
 	static UINT HashKey(LPCTSTR Key)
 	{
 		UINT i = 0;
-		SIZE_T len = _tcslen(Key);
+		SIZE_T len = _tcslen(Key); 
+		wchar_t cr = Key[len-1];
+		int index = 10 + (int)cr;
 		while( len-- > 0 ) i = (i << 5) + i + Key[len];
 		return i;
 	}

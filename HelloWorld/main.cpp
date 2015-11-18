@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "Hello.h"
+#include "CHelloWnd.h"
 
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*lpCmdLine*/, int nCmdShow)
 {
@@ -7,18 +8,18 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /*l
 	CHelloWorld hello;
 	hello.SayHello();
 	CPaintManagerUI::SetInstance(hInstance);
-	CPaintManagerUI::SetResourcePath(CPaintManagerUI::GetInstancePath());
+	//CPaintManagerUI::SetResourcePath(CPaintManagerUI::GetInstancePath());
 
 	HRESULT Hr = ::CoInitialize(NULL);
 	if (FAILED(Hr)) return 0;
 
-	/*CFrameWindowWnd* pFrame = new CFrameWindowWnd();
-	if (pFrame == NULL) return 0;
-	pFrame->Create(NULL, _T("这是一个最简单的测试用exe，修改test1.xml就可以看到效果"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
-	pFrame->CenterWindow();
-	pFrame->ShowWindow(true);
+	CHelloDuilibWnd* wnd = new CHelloDuilibWnd; // 生成对象
+	wnd->Create(NULL, NULL, UI_WNDSTYLE_DIALOG, 0); // 创建DLG窗口
+	wnd->CenterWindow(); // 窗口居中
+	wnd->ShowWindow(); // 显示
+
 	CPaintManagerUI::MessageLoop();
-*/
+
 	::CoUninitialize();
 	return 0;
 }

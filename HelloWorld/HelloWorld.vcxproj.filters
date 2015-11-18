@@ -5,15 +5,25 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="main">
+    <Filter Include="Main">
       <UniqueIdentifier>{07abc56f-94f1-4deb-831c-a782ce5a69c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HelloWnd">
+      <UniqueIdentifier>{39f77119-d318-4382-afd8-5046a719e32b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="StdAfx.h" />
     <ClInclude Include="Hello.h">
-      <Filter>main</Filter>
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>资源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="CHelloWnd.h">
+      <Filter>HelloWnd</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -28,11 +38,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>main</Filter>
+      <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="StdAfx.cpp" />
     <ClCompile Include="Hello.cpp">
-      <Filter>main</Filter>
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CHelloWnd.cpp">
+      <Filter>HelloWnd</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

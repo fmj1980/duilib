@@ -63,6 +63,8 @@ void CHelloWorld::TestTime()
 
 	char buffer[50];
 	sprintf(buffer, "%4dÄê%02dÔÂ%02dÈÕ %02d:%02d:%02d\n", t->tm_year + 1900, t->tm_mon + 1, t->tm_mday, t->tm_hour, t->tm_min, t->tm_sec);
+	wchar_t wbuffer[50];
+	wsprintfW(wbuffer, _T("%4d adb"), t->tm_year);
 	OutputDebugStringA(buffer);
 
 	time_t start, end;
