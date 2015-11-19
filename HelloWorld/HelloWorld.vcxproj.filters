@@ -11,11 +11,11 @@
     <Filter Include="HelloWnd">
       <UniqueIdentifier>{39f77119-d318-4382-afd8-5046a719e32b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Test">
+      <UniqueIdentifier>{5d0a4c0c-f7f3-4060-8be9-1a0e26b564af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Hello.h">
-      <Filter>Main</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>资源文件</Filter>
     </ClInclude>
@@ -24,6 +24,9 @@
     </ClInclude>
     <ClInclude Include="CHelloWnd.h">
       <Filter>HelloWnd</Filter>
+    </ClInclude>
+    <ClInclude Include="Hello.h">
+      <Filter>Test</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -35,12 +38,12 @@
     <Image Include="bitmap1.bmp">
       <Filter>资源文件</Filter>
     </Image>
+    <Image Include="res\hello.ico">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Hello.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="StdAfx.cpp">
@@ -49,5 +52,11 @@
     <ClCompile Include="CHelloWnd.cpp">
       <Filter>HelloWnd</Filter>
     </ClCompile>
+    <ClCompile Include="Hello.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="res\HelloDuilib.xml" />
   </ItemGroup>
 </Project>

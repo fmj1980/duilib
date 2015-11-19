@@ -29,6 +29,7 @@ void CHelloWorld::SayHello()
 	}
 	this->TestTime();
 	TestString();
+	TestResource();
 }
 
 
@@ -132,9 +133,9 @@ void CHelloWorld::TestString()
 
 	//Mid 3 - 2
 	wchar_t midChar[50];
-	ZeroMemory(midChar, (50 + 1) * sizeof(TCHAR));
+	ZeroMemory(midChar, (50) * sizeof(TCHAR));
 	_tcsncpy(midChar, str + 3 -1, 2);
-	midChar[2] = *(_T("\0"));
+	//midChar[2] = *(_T("\0"));
 
 	//find ll
 	LPCTSTR finPtr = _tcsstr(str, _T("ll"));
@@ -154,6 +155,42 @@ void CHelloWorld::TestString()
 
 void CHelloWorld::TestResource()
 {
+	HINSTANCE instace = CPaintManagerUI::GetInstance();
+	char strHello[40];
+	LoadStringA(instace, IDS_STRING_HELLO, strHello, 40);
 
+	HICON icon = LoadIcon(instace, MAKEINTRESOURCE(IDI_ICON));
+
+	HMODULE module = GetModuleHandle(NULL);
+	ASSERT(instace == module);
+
+	HRSRC   hResource = FindResource(instace,MAKEINTRESOURCE(IDR_HELLO_WND), TEXT("XML"));
+ 	if ( !hResource )
+	{
+		return;
+	}
+	HGLOBAL hGlobal = ::LoadResource(instace, hResource);
+	if ( hGlobal)
+	{
+		LPVOID   pData = LockResource(hGlobal);
+		if ( pData)
+		{
+			DWORD dwSize = SizeofResource(instace, hResource);
+
+			TCHAR tszModule[MAX_PATH + 1] = { 0 };
+			::GetModuleFileName(instace, tszModule, MAX_PATH);
+			CDuiString sInstancePath = tszModule;
+			int pos = sInstancePath.ReverseFind(_T('\\'));
+			if (pos >= 0) sInstancePath = sInstancePath.Left(pos + 1);
+			sInstancePath += _T("Hello.xml");
+
+			CFile   calcFile;
+			if (calcFile.Open(sInstancePath, CFile::modeCreate | CFile::modeReadWrite))
+			{
+				calcFile.Write(pData, dwSize);
+				calcFile.Close();
+			}
+		}
+	}
 }
 

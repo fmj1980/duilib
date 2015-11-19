@@ -1,3 +1,6 @@
+#define  _AFXDLL
+
+#include <afx.h>
 #include <objbase.h>
 #include <zmouse.h>
 #include <exdisp.h>
@@ -13,9 +16,11 @@
 #include <chrono>
 #include <iostream>
 #include <time.h>
-#include <windows.h>
+//#include <windows.h>
 
 #include "..\DuiLib\UIlib.h"
+
+#include "resource.h"
 
 using namespace DuiLib;
 
