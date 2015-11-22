@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<Window size="461,400">
-    <VerticalLayout bordersize="2" width="400" height="400" bkcolor="#FF808080" bordercolor="#00800080">
-        <Label text="HelloDuilib" float="true" pos="93,114,0,0" width="229" height="131" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
-    </VerticalLayout>
+<Window caption="0,0,0,36" roundcorner="5,5" size="600,450" sizebox="6,6,6,6" mininfo="80,60">
+    <VerticalLayout bkcolor="#FFFFFFFF" bordersize="2" bordercolor="#FF0934DA">
+		<HorizontalLayout name="header" height="36" bkcolor="#FF4775CC">
+			<HorizontalLayout>
+				<Control width="10"/>
+				<Label name="apptitle" text="Menu Test" font="1" textcolor="#FFFFFFFF" />
+			</HorizontalLayout>
+			<HorizontalLayout height="25" width="50">
+					<Button name="closebtn" tooltip="关闭" height="18" width="43" normalimage="file='close.png'" hotimage="file='close_h.png'" pushedimage="file='close_p.png'"/>
+			</HorizontalLayout>
+		</HorizontalLayout>
+		<VerticalLayout name="body" padding="2,0,2,2">
+			   <Label text="HelloDuilib" float="true" pos="93,114,0,0" width="229" height="131" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+		</VerticalLayout>
+
+	</VerticalLayout>
 </Window>

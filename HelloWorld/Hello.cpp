@@ -1,7 +1,11 @@
 #include "StdAfx.h"
 #include "Hello.h"
-
 using std::shared_ptr;
+using namespace std;
+
+CHelloWorld::~CHelloWorld()
+{
+}
 
 CHelloWorld::CHelloWorld()
 {
@@ -13,11 +17,6 @@ CHelloWorld::CHelloWorld()
 	}
 }
 
-CHelloWorld::~CHelloWorld()
-{
-
-}
-
 void CHelloWorld::SayHello()
 {
 	shared_ptr<int> sharedPtr = _weakPtr.lock();
@@ -27,9 +26,10 @@ void CHelloWorld::SayHello()
 	{
 		int result = *intPtr;
 	}
-	this->TestTime();
+	TestTime();
 	TestString();
 	TestResource();
+	TestThread();
 }
 
 
@@ -192,5 +192,84 @@ void CHelloWorld::TestResource()
 			}
 		}
 	}
+}
+
+void CHelloWorld::TestThread()
+{
+	//http://www.cnblogs.com/haippy/p/3252092.html
+	std::vector<int> vList;
+	std:recursive_mutex mx;
+
+	std::thread  thread1([&](int from, int to)
+	{
+		for (int i = from; i < to; ++i) {
+			std::lock_guard<recursive_mutex> lock(mx);
+			vList.push_back(i);
+			std::cout << "Thread " << i << " executing\n";
+			std::this_thread::sleep_for(std::chrono::milliseconds(1));
+		}
+	},0,500);
+
+	std::thread  thread2([&](int from, int to)
+	{
+		for (int i = from; i < to; ++i) {
+			//std::lock_guard<recursive_mutex> lock(mx);
+			// unique_lock 和  lock_guard 的区别
+			std::unique_lock<recursive_mutex> lock(mx);
+			vList.push_back(i);
+			std::cout << "Thread " << i << " executing\n";
+			std::this_thread::sleep_for(std::chrono::milliseconds(1));
+		}
+	}, 500,1000);
+
+	static std::once_flag oc;
+	std::call_once(oc, [] 
+	{
+		int index = 10;
+	});
+	std::call_once(oc, &CHelloWorld::TestResource,this);
+
+	///递归锁
+	thread2.join();
+	thread1.join();
+
+	// std::recursive_timed_mutex std::time_mutex 比 std::mutex 多了两个成员函数，try_lock_for()，try_lock_until()。 try_lock_for 函数接受一个时间范围
+	std::timed_mutex mtx;
+	mtx.lock();
+	while (!mtx.try_lock_for(std::chrono::milliseconds(200))) {
+		std::cout << "-";
+		mtx.unlock();
+	}
+	mtx.unlock();
+
+	
+	int conditionIndex = 0;
+	
+	std::thread thread3([&](){
+		std::unique_lock<mutex> lock(_mutex);
+		if (conditionIndex < 10) {
+			_condition.wait(lock);
+			::OutputDebugStringA("thread3");
+		}
+		std::cout << "finish";
+		lock.unlock();
+	});
+	std::thread thread4([&]() {
+		std::unique_lock<mutex> lock(_mutex);
+		_condition.wait(lock);
+		::OutputDebugStringA("thread4");
+		lock.unlock();
+	});
+	std::thread thread5([&]() {
+		while (conditionIndex < 10) {
+			conditionIndex++;
+			std::this_thread::sleep_for(std::chrono::milliseconds(10));
+		}
+		_condition.notify_all();
+	});
+
+	thread5.join();
+	thread4.join();
+	thread3.join();
 }
 
