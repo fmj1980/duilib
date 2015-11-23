@@ -58,7 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Xml Include="res\HelloDuilib.xml" />
-    <Xml Include="..\bin\skin\HelloDuilib.xml">
+    <Xml Include="..\bin\skin\HelloWorld\HelloDuilib.xml">
+      <Filter>HelloWnd</Filter>
+    </Xml>
+    <Xml Include="..\bin\skin\HelloWorld\HelloControl.xml">
       <Filter>HelloWnd</Filter>
     </Xml>
   </ItemGroup>

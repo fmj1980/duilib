@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window>
+  <HorizontalLayout height="50">
+            <Label name ="myLabel" text="Hello Control" float="false" height="28" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+    </HorizontalLayout>
+</Window>

@@ -11,10 +11,7 @@
             </HorizontalLayout>
         </HorizontalLayout>
         <VerticalLayout name="body" bkcolor="#FF00FF00">
-            <Label text="HelloDuilib" float="true" pos="93,114,0,0" width="229" height="28" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
-            <Edit float="true" pos="31,22,0,0" width="60" height="30" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
-            <Text text="123" float="true" pos="166,39,0,0" width="60" height="30" textpadding="2,0,2,0" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="wrap" />
-            <Option text="1" float="true" pos="395,67,0,0" width="60" height="30" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+            <Label text="HelloDuilib123" float="true" pos="93,114,0,0" width="229" height="28" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
         </VerticalLayout>
     </VerticalLayout>
 </Window>

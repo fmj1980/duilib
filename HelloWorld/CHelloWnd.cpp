@@ -15,7 +15,7 @@ CHelloDuilibWnd::~CHelloDuilibWnd(void)
 
 DuiLib::CDuiString CHelloDuilibWnd::GetSkinFolder()
 {
-	return _T("skin");
+	return _T("skin/HelloWorld");
 }
 
 DuiLib::CDuiString CHelloDuilibWnd::GetSkinFile()
@@ -53,13 +53,26 @@ void CHelloDuilibWnd::InitWindow()
 	CLabelUI* txtUI = new CLabelUI();
 	layoutBody->Add(txtUI);
 	txtUI->SetFloat(true);
-	txtUI->SetPos({ 10, 10, 0, 0 });
+	txtUI->SetPos({ 10, 300, 0, 0 });
 	txtUI->SetFixedWidth(200);
 	txtUI->SetFixedHeight(20);
 	txtUI->SetText(_T("Hello Dynamic Text"));
-	layoutBody->NeedUpdate();
 
 	btnClose->OnEvent += MakeDelegate(this, &CHelloDuilibWnd::OnCloseClicked);
+
+	CDialogBuilder builder;
+	CVerticalLayoutUI* userControl = static_cast<CVerticalLayoutUI*>(builder.Create(_T("HelloControl.xml"),(LPCTSTR)0));
+	CControlUI* testLabel = userControl->FindSubControl(_T("myLabel"));
+	layoutBody->Add(userControl);
+
+	layoutBody->NeedUpdate();
+	
+	CControlUI* myLabel = static_cast<CLabelUI*>(m_PaintManager.FindControl(_T("myLabel")));
+	
+	if (myLabel)
+	{
+	}
+
 }
 
 bool CHelloDuilibWnd::OnCloseClicked(void* param)

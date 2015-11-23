@@ -176,9 +176,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="..\bin\skin\HelloDuilib.xml">
-      <SubType>Designer</SubType>
-    </Xml>
+    <Xml Include="..\bin\skin\HelloWorld\HelloControl.xml" />
+    <Xml Include="..\bin\skin\HelloWorld\HelloDuilib.xml" />
     <Xml Include="res\HelloDuilib.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
