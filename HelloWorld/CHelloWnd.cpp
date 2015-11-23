@@ -45,19 +45,20 @@ void CHelloDuilibWnd::Notify(TNotifyUI& msg)
 
 void CHelloDuilibWnd::InitWindow()
 {
-	CTextUI* helloTxUI =  static_cast<CTextUI*>(m_PaintManager.FindControl(_T("apptitle")));
+	CLabelUI* helloTxUI = static_cast<CLabelUI*>(m_PaintManager.FindControl(_T("apptitle")));
+	helloTxUI->SetText(_T("hehe"));
 	CButtonUI* btnClose = static_cast<CButtonUI*>(m_PaintManager.FindControl(_T("closebtn")));
 	CVerticalLayoutUI* layoutBody = static_cast<CVerticalLayoutUI*>(m_PaintManager.FindControl(_T("body")));
 
-	CTextUI* txtUI = new CTextUI();
-	txtUI->SetFloat(false);
-	txtUI->SetPos(CDuiRect(20, 20, 100, 100));
-	txtUI->SetMaxWidth(100);
-	txtUI->SetMaxHeight(100);
-	txtUI->SetBkColor(0x00110000);
-	txtUI->SetText(_T("Hello Dynamic Text"));
+	CLabelUI* txtUI = new CLabelUI();
 	layoutBody->Add(txtUI);
+	txtUI->SetFloat(true);
+	txtUI->SetPos({ 10, 10, 0, 0 });
+	txtUI->SetFixedWidth(200);
+	txtUI->SetFixedHeight(20);
+	txtUI->SetText(_T("Hello Dynamic Text"));
 	layoutBody->NeedUpdate();
+
 	btnClose->OnEvent += MakeDelegate(this, &CHelloDuilibWnd::OnCloseClicked);
 }
 

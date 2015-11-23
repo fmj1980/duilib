@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<Window caption="0,0,0,36" roundcorner="5,5" size="600,450" sizebox="6,6,6,6" mininfo="80,60">
-    <VerticalLayout bkcolor="#FFFFFFFF" bordersize="2" bordercolor="#FF0934DA">
-		<HorizontalLayout name="header" height="36" bkcolor="#FF4775CC">
-			<HorizontalLayout>
-				<Control width="10"/>
-				<Label name="apptitle" text="Menu Test" font="1" textcolor="#FFFFFFFF" />
-			</HorizontalLayout>
-			<HorizontalLayout height="25" width="50">
-					<Button name="closebtn" tooltip="关闭" height="18" width="43" normalimage="file='close.png'" hotimage="file='close_h.png'" pushedimage="file='close_p.png'"/>
-			</HorizontalLayout>
-		</HorizontalLayout>
-		<VerticalLayout name="body" padding="2,0,2,2">
-			   <Label text="HelloDuilib" float="true" pos="93,114,0,0" width="229" height="131" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
-		</VerticalLayout>
-
-	</VerticalLayout>
+<Window size="600,450" sizebox="6,6,6,6" caption="0,0,0,36" mininfo="80,60" roundcorner="5,5">
+    <VerticalLayout bordersize="2" bkcolor="#FFFFFFFF" bordercolor="#FF0934DA">
+        <HorizontalLayout name="header" height="36" bkcolor="#FF4775CC">
+            <HorizontalLayout>
+                <Control width="10" />
+                <Label name="apptitle" text="Menu Test" textcolor="#FFFFFFFF" disabledtextcolor="#FFA7A6AA" font="1" />
+            </HorizontalLayout>
+            <HorizontalLayout width="50" height="25">
+                <Button name="closebtn" tooltip="关闭" width="43" height="18" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;close.png&apos;" hotimage="file=&apos;close_h.png&apos;" pushedimage="file=&apos;close_p.png&apos;" />
+            </HorizontalLayout>
+        </HorizontalLayout>
+        <VerticalLayout name="body" bkcolor="#FF00FF00">
+            <Label text="HelloDuilib" float="true" pos="93,114,0,0" width="229" height="28" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+            <Edit float="true" pos="31,22,0,0" width="60" height="30" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" />
+            <Text text="123" float="true" pos="166,39,0,0" width="60" height="30" textpadding="2,0,2,0" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="wrap" />
+            <Option text="1" float="true" pos="395,67,0,0" width="60" height="30" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" />
+        </VerticalLayout>
+    </VerticalLayout>
 </Window>
