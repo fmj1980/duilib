@@ -297,6 +297,7 @@
     <Image Include="C:\Users\fmj\Desktop\惠亚梅\无标题.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\duilib_test\duilib_test.vcxproj" />
     <None Include="ClassDiagram.cd" />
     <None Include="xml1.bin" />
   </ItemGroup>

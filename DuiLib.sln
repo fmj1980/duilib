@@ -26,6 +26,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloWorld", "HelloWorld\He
 		{E106ACD7-4E53-4AEE-942B-D0DD426DB34E} = {E106ACD7-4E53-4AEE-942B-D0DD426DB34E}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "duilib_test", "duilib_test\duilib_test.vcxproj", "{CE0944CF-4A05-4467-A41F-90FBEE357130}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -208,6 +210,26 @@ Global
 		{C6D39E02-1825-452B-B831-4FE5277435B4}.UnicodeRelease|Win32.Build.0 = Release|Win32
 		{C6D39E02-1825-452B-B831-4FE5277435B4}.UnicodeRelease|x64.ActiveCfg = Release|x64
 		{C6D39E02-1825-452B-B831-4FE5277435B4}.UnicodeRelease|x64.Build.0 = Release|x64
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.Debug|ARM.ActiveCfg = Debug|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.Debug|Win32.Build.0 = Debug|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.Debug|x64.ActiveCfg = Debug|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.Release|ARM.ActiveCfg = Release|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.Release|Win32.ActiveCfg = Release|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.Release|Win32.Build.0 = Release|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.Release|x64.ActiveCfg = Release|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.UnicodeDebug|ARM.ActiveCfg = Release|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.UnicodeDebug|ARM.Build.0 = Release|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.UnicodeDebug|Win32.ActiveCfg = Debug|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.UnicodeDebug|Win32.Build.0 = Debug|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.UnicodeDebug|x64.ActiveCfg = Release|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.UnicodeDebug|x64.Build.0 = Release|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.UnicodeRelease|ARM.ActiveCfg = Release|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.UnicodeRelease|ARM.Build.0 = Release|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.UnicodeRelease|Win32.ActiveCfg = Release|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.UnicodeRelease|Win32.Build.0 = Release|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.UnicodeRelease|x64.ActiveCfg = Release|Win32
+		{CE0944CF-4A05-4467-A41F-90FBEE357130}.UnicodeRelease|x64.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

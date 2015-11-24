@@ -78,5 +78,6 @@
   <ItemGroup>
     <None Include="xml1.bin" />
     <None Include="ClassDiagram.cd" />
+    <None Include="..\duilib_test\duilib_test.vcxproj" />
   </ItemGroup>
 </Project>
